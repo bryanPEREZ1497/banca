@@ -1,0 +1,27 @@
+<h3><b>Realice pagos de servicios</b> </h3>
+
+<form (submit)="hacerPago()">
+    <mat-form-field>
+        <mat-label>Cuenta a debitar</mat-label>
+        <input matInput type="text" [(ngModel)]="camposDePago.cuenta_a_debitar" [ngModelOptions]="{standalone: true}"
+            required>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <mat-label>Monto</mat-label>
+        <input matInput type="number" [(ngModel)]="camposDePago.monto" [ngModelOptions]="{standalone: true}" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <mat-label>Servicios</mat-label>
+        <mat-select [(ngModel)]="camposDePago.servicio" [ngModelOptions]="{standalone: true}" required>
+            <mat-option [value]="electricidad">Electricidad</mat-option>
+            <mat-option [value]="agua">Agua</mat-option>
+            <mat-option [value]="telefono">Teléfono</mat-option>
+            <mat-option [value]="internet">Internet</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <br>
+    <input type="submit" value="Enviar">
+
+</form>
