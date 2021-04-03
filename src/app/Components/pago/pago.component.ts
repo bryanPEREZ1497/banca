@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { PagoService } from '../../Services/pago.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
 
 @Component({
   selector: 'app-pago',
@@ -21,8 +19,7 @@ export class PagoComponent implements OnInit {
   internet: number = 3;
 
   constructor(
-    private pagoService: PagoService,
-    private _snackBar: MatSnackBar
+    private pagoService: PagoService
   ) { }
 
   ngOnInit(): void {
@@ -34,16 +31,10 @@ export class PagoComponent implements OnInit {
       )
   }
   hacerPago() {
-    console.log(this.camposDePago);
     this.pagoService.hacerPago(this.camposDePago)
       .subscribe(
         res => console.log(res)
       )
   }
-  durationInSeconds = 5;
-  openSnackBar() {
-    this._snackBar.openFromComponent(PageNotFoundComponent, {
-      duration: this.durationInSeconds * 1000,
-    });
-  }
+  
 }

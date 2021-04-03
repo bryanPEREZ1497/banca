@@ -1,5 +1,5 @@
 <h3><b>Realice su Transferencia</b> </h3>
-<form (submit)="hacerTransferencia()">
+<!-- <form (submit)="hacerTransferencia()">
     <input type="text" name="" id="benefactor" placeholder="Cuenta a debitar"
         [(ngModel)]="camposDeTransferencia.benefactor" [ngModelOptions]="{standalone: true}" required>
     <br>
@@ -13,16 +13,35 @@
         [ngModelOptions]="{standalone: true}">
     <br>
     <input type="submit" value="Enviar">
+</form> -->
+
+<div class="form">
+<form >
+    <mat-form-field>
+        <mat-label>Cuenta a debitar</mat-label>
+        <input matInput type="text" [(ngModel)]="camposDeTransferencia.benefactor" [ngModelOptions]="{standalone: true}"
+            required>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <mat-label>Cuenta del beneficiario</mat-label>
+        <input matInput type="text" [(ngModel)]="camposDeTransferencia.beneficiario" [ngModelOptions]="{standalone: true}"
+            required>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <mat-label>Monto</mat-label>
+        <input matInput type="number" [(ngModel)]="camposDeTransferencia.monto" [ngModelOptions]="{standalone: true}" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <mat-label>Motivo</mat-label>
+        <input matInput type="text" [(ngModel)]="camposDeTransferencia.motivo" [ngModelOptions]="{standalone: true}"
+            required>
+    </mat-form-field>
+    <br>
+    <!-- <input type="submit" value="Enviar"> -->
+    <button color="primary" mat-raised-button (click)="hacerTransferencia()">Enviar</button>
+
 </form>
-
-<!-- <div>
-    <h6>Cuentas</h6>
-    <ul id="lista-cuentas"></ul>
 </div>
-
-<div>
-    <h6>Busque una cuenta</h6>
-    <input type="text" name="" id="numeroCuenta" placeholder="Número de cuenta" required>
-    <button id="buscarCuenta">Buscar</button>
-    <div id="cuenta"></div>
-</div> -->

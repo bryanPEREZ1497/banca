@@ -1,6 +1,6 @@
 <h3><b>Realice pagos de servicios</b> </h3>
 
-<form (submit)="hacerPago()">
+<form >
     <mat-form-field>
         <mat-label>Cuenta a debitar</mat-label>
         <input matInput type="text" [(ngModel)]="camposDePago.cuenta_a_debitar" [ngModelOptions]="{standalone: true}"
@@ -22,6 +22,7 @@
         </mat-select>
     </mat-form-field>
     <br>
-    <input type="submit" value="Enviar">
+    <!-- <input type="submit" value="Enviar"> -->
+    <button color="primary" mat-raised-button (click)="hacerPago()">Enviar</button>
 
 </form>
