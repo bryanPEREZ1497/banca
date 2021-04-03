@@ -13,7 +13,7 @@ export class ListaCuentasComponent implements OnInit {
     private clienteService: ClienteService,
     private route: ActivatedRoute,
     private router: Router
-    ) { }
+  ) { }
 
   ngOnInit(): void {
     this.getCuentas();
@@ -27,10 +27,7 @@ export class ListaCuentasComponent implements OnInit {
     // );
     const id = +this.route.snapshot.paramMap.get('id');
     this.clienteService.devolverCuentasDeCliente(id)
-      .subscribe(datos => {
-        this.cuentas = datos,
-        console.log('Error');
-      })
+      .subscribe(datos => this.cuentas = datos)
   }
 
   volver() {
