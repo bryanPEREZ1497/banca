@@ -20,11 +20,17 @@ export class ListaCuentasComponent implements OnInit {
   }
 
   getCuentas() {
-    this.cuentas = this.route.paramMap.pipe(
-      switchMap((params: ParamMap) => {
-        return this.clienteService.devolverCuentasDeCliente(+params.get('id'));
+    // this.cuentas = this.route.paramMap.pipe(
+    //   switchMap((params: ParamMap) => {
+    //     return this.clienteService.devolverCuentasDeCliente(+params.get('id'));
+    //   })
+    // );
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.clienteService.devolverCuentasDeCliente(id)
+      .subscribe(datos => {
+        this.cuentas = datos,
+        console.log('Error');
       })
-    );
   }
 
   volver() {
