@@ -19,6 +19,6 @@ export class CuentaComponent implements OnInit {
         cuentas => this.cuentas = cuentas
       );
   }
-
+  displayedColumns = ['nro_cuenta', 'saldo'];
 
 }
