@@ -16,7 +16,7 @@ export class ClienteService {
   devolverClientes(): Observable<any[]> {
     return this.http.get<any[]>(this.url + '/clientes')
       .pipe(
-        tap(_ => this.log('Cuentas recibidas')),
+        tap(_ => this.log('Clientes recibidas')),
         catchError(this.handleError<any[]>('devolverCuentas', []))
       );
   }
