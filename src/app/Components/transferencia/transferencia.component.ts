@@ -8,10 +8,10 @@ import { TransferenciaService } from "../../Services/transferencia.service";
 export class TransferenciaComponent implements OnInit {
 
   camposDeTransferencia = {
-    // benefactor,
-    // beneficiario,
-    // monto,
-    // motivo,
+    benefactor: '',
+    beneficiario:'',
+    monto:0,
+    motivo:'',
     fecha: `${new Date().getDate()}-${new Date().getMonth() + 1}-${new Date().getFullYear()}`
   };
 

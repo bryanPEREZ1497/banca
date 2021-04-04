@@ -11,6 +11,9 @@ export class PagoComponent implements OnInit {
   pagos: any[] = [];
 
   camposDePago = {
+    cuenta_a_debitar: '',
+    monto: 0,
+    servicio: 0,
     fecha: `${new Date().getDate()}-${new Date().getMonth() + 1}-${new Date().getFullYear()}`
   };
   electricidad: number = 2;
@@ -36,5 +39,5 @@ export class PagoComponent implements OnInit {
         res => console.log(res)
       )
   }
-  
+
 }
