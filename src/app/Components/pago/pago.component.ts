@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { PagoService } from '../../Services/pago.service';
-
 @Component({
   selector: 'app-pago',
   templateUrl: './pago.component.html',
@@ -22,7 +22,8 @@ export class PagoComponent implements OnInit {
   internet: number = 3;
 
   constructor(
-    private pagoService: PagoService
+    private pagoService: PagoService,
+    private snackbar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
@@ -33,10 +34,16 @@ export class PagoComponent implements OnInit {
         pagos => this.pagos = pagos
       )
   }
-  hacerPago() {
+  hacerPago(mensaje: string, action: string): void {
     this.pagoService.hacerPago(this.camposDePago)
       .subscribe(
-        res => console.log(res)
+        res => {
+          if (res.hecho) {
+            this.snackbar.open('¡Pago realizado!', action, { duration: 2000 })
+            return;
+          }
+          this.snackbar.open('¡El pago falló!', action, { duration: 2000 })
+        }
       )
   }
 

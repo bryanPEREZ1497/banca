@@ -22,7 +22,7 @@ export class PagoService {
   hacerPago(camposDePago: any): Observable<any> {
     return this.http.post(`${this.url}/hacer-pago`, camposDePago)
       .pipe(
-        tap(_ => this.log('Pago exitoso')),
+        tap(_ => this.log('Petición enviada')),
         catchError(this.handleError<any[]>('hacerPago', []))
       );
   }
