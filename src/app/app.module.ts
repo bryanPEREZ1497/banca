@@ -19,6 +19,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { SigninComponent } from './signin/signin.component';
 
 
 
@@ -29,7 +30,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     TransferenciaComponent,
     CuentaComponent,
     PagoComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,

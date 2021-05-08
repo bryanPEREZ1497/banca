@@ -20,7 +20,7 @@ export class ListaCuentasComponent implements OnInit {
   }
 
   getCuentas() {    
-    const id = +!this.route.snapshot.paramMap.get('id');
+    const id = +this.route.snapshot.paramMap.get('id');
     this.clienteService.devolverCuentasDeCliente(id)
       .subscribe(datos => this.cuentas = datos)
   }
