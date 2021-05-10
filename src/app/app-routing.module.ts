@@ -4,6 +4,7 @@ import { TransferenciaComponent } from "./Components/transferencia/transferencia
 import { CuentaComponent } from "./Components/cuenta/cuenta.component";
 import { PagoComponent } from "./Components/pago/pago.component";
 import { PageNotFoundComponent } from "./Components/page-not-found/page-not-found.component";
+import {SignupComponent} from './signup/signup.component';
 const routes: Routes = [
   {
     path: 'transferencias',
@@ -13,6 +14,11 @@ const routes: Routes = [
     path: 'cuentas',
     component: CuentaComponent
   },
+  {
+    path: 'signup',
+    component: SignupComponent
+  },
+
   {
     path: 'pagos',
     component: PagoComponent
@@ -25,9 +31,7 @@ const routes: Routes = [
   {
     path:'**',
     component: PageNotFoundComponent
-  },
-
-
+  }
 
 ];
 
