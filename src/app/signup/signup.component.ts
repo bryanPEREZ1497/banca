@@ -7,13 +7,14 @@ import { Router } from '@angular/router'
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-user = {email:'',
-    password:''
-};
+  user = {
+    email: '',
+    password: ''
+  };
   constructor(
     private authService: AuthService,
     private router: Router
-    ) { }
+  ) { }
 
   ngOnInit() {
   }
@@ -24,12 +25,12 @@ user = {email:'',
         res => {
           console.log(res);
           localStorage.setItem('token', res.token);
-          this.router.navigate(['/clientes']);
+          this.router.navigate(['/perfil/67']);
         },
-        err => console.log('Hay un error',err)
-      
+        err => console.log('Hay un error', err)
+
       )
-    console.log(this.user) 
+    console.log(this.user)
   }
 
 }
