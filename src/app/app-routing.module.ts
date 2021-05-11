@@ -4,24 +4,32 @@ import { TransferenciaComponent } from "./Components/transferencia/transferencia
 import { CuentaComponent } from "./Components/cuenta/cuenta.component";
 import { PagoComponent } from "./Components/pago/pago.component";
 import { PageNotFoundComponent } from "./Components/page-not-found/page-not-found.component";
-import {SignupComponent} from './signup/signup.component';
+import { SignupComponent } from './signup/signup.component';
+import { SigninComponent } from './signin/signin.component';
+import { AuthGuard } from "./auth.guard";
 const routes: Routes = [
   {
     path: 'transferencias',
-    component: TransferenciaComponent
+    component: TransferenciaComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'cuentas',
-    component: CuentaComponent
+    component: CuentaComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'signup',
     component: SignupComponent
   },
-
+  {
+    path: 'signin',
+    component: SigninComponent
+  },
   {
     path: 'pagos',
-    component: PagoComponent
+    component: PagoComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: '',
@@ -29,10 +37,9 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path:'**',
+    path: '**',
     component: PageNotFoundComponent
   }
-
 ];
 
 @NgModule({

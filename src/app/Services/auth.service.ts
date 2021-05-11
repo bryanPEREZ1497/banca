@@ -7,15 +7,15 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
 
-  private URL = 'http://localhost:3000';
+  url = 'http://localhost:3000';
   constructor(private http: HttpClient, private router: Router) { }
 
   signUp(user: {}): Observable<any> {
-    return this.http.post<any>(this.URL + '/auth/signup', user);
+    return this.http.post<any>(`${this.url}/auth/signup`, user);
   }
 
   signIn(user: {}): Observable<any> {
-    return this.http.post<any>(`${URL}/signin`, user);
+    return this.http.post<any>(`${this.url}/auth/signin`, user);
   }
   loggedIn() {
     return !!localStorage.getItem('token');
