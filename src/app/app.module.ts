@@ -19,10 +19,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { SigninComponent } from './signin/signin.component';
-
-
-
 
 @NgModule({
   declarations: [
@@ -30,8 +26,7 @@ import { SigninComponent } from './signin/signin.component';
     TransferenciaComponent,
     CuentaComponent,
     PagoComponent,
-    PageNotFoundComponent,
-    SigninComponent
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
