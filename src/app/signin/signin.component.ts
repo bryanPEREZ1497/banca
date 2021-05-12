@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../Services/auth.service'
 import { Router } from '@angular/router'
+import { PerfilService } from '../Services/perfil.service';
 
 @Component({
   selector: 'app-signin',
@@ -9,12 +10,13 @@ import { Router } from '@angular/router'
 })
 export class SigninComponent implements OnInit {
   user = {
-    email:'',
-    password:''
+    email: '',
+    password: ''
   }
 
   constructor(
     private authService: AuthService,
+    private perfilService: PerfilService,
     private router: Router
   ) { }
 
@@ -27,10 +29,16 @@ export class SigninComponent implements OnInit {
         res => {
           console.log(res);
           localStorage.setItem('token', res.token);
-          this.router.navigate(['/perfil/67']);
+          const id = this.foundIdByEmail(this.user.email);
+            console.log(id);
+          this.router.navigate([`/perfil/${id}`]);
         },
         err => console.log(err)
       )
+  }
+  foundIdByEmail(email: string) {
+    return this.perfilService.foundIdByEmail(email)
+      .subscribe()
   }
 
 }
