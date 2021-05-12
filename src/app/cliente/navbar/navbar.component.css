@@ -1,0 +1,22 @@
+nav {
+    background-color: rgb(46, 46, 189);
+}
+.button {
+    color: rgba(255, 255, 255, 0.5);
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    padding: 6px 24px;
+    text-decoration: none;
+    outline: 0;
+  }
+    .activebutton {
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      font-weight: bold;
+      padding: 6px 24px;
+      text-decoration: none;
+      outline: 0;
+  
+      
+  }
