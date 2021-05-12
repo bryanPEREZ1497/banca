@@ -33,7 +33,13 @@ export class PerfilService {
         catchError(this.handleError<any[]>('devolverPerfilDeClienteId', []))
       );
   }
-
+  foundIdByEmail(email: string): Observable<{}[]> {
+    return this.http.post<{}[]>(`${this.url}/perfil`, { email })
+      .pipe(
+        tap(_ => this.log('Datos personales obtenidos exitosamente')),
+        catchError(this.handleError<any[]>('devolverPerfilDeClienteId', []))
+      );
+  }
   private log(mensaje: string): void {
     console.log(mensaje);
   }
