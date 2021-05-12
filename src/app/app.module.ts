@@ -22,9 +22,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
-<<<<<<< HEAD
-=======
->>>>>>> signup
 @NgModule({
   declarations: [
     AppComponent,

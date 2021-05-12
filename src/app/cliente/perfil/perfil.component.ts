@@ -24,10 +24,7 @@ export class PerfilComponent implements OnInit {
     this.devolverPerfilDeCliente();
   }
   devolverPerfilDeCliente() {
-<<<<<<< HEAD
-=======
    const id = +!!this.route.snapshot.paramMap.get('id');
->>>>>>> signup
     this.perfilService.devolverPerfilDeClienteId(id)
       .subscribe(datos => this.datosPersonales = datos)
   }
