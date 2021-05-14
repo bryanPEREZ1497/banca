@@ -2,6 +2,7 @@ nav {
     background-color: rgb(46, 46, 189);
 }
 .button {
+    display: inline-block;
     color: rgba(255, 255, 255, 0.5);
     font-family: Arial, sans-serif;
     font-size: 15px;

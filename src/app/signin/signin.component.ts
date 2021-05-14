@@ -13,6 +13,7 @@ export class SigninComponent implements OnInit {
     email: '',
     password: ''
   }
+  id: any;
 
   constructor(
     private authService: AuthService,
@@ -24,21 +25,20 @@ export class SigninComponent implements OnInit {
   }
 
   signIn() {
+    this.foundIdByEmail(this.user.email);
     this.authService.signIn(this.user)
       .subscribe(
         res => {
-          console.log(res);
           localStorage.setItem('token', res.token);
-          const id = this.foundIdByEmail(this.user.email);
-            console.log(id);
-          this.router.navigate([`/perfil/${id}`]);
+          localStorage.setItem('id', this.id[0].cliente);
+          this.router.navigate([`/perfil/${this.id[0].cliente}`]);
         },
         err => console.log(err)
       )
   }
   foundIdByEmail(email: string) {
-    return this.perfilService.foundIdByEmail(email)
-      .subscribe()
+    this.perfilService.foundIdByEmail(email)
+      .subscribe(res => this.id = res);
   }
 
 }

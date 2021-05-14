@@ -1,6 +1,6 @@
-<app-navbar></app-navbar>
+<app-navbar [id]="id"></app-navbar>
 <h3><b>Realice su Transferencia</b> </h3>
-<!-- <form (submit)="hacerTransferencia()">
+<form (submit)="hacerTransferencia()">
     <input type="text" name="" id="benefactor" placeholder="Cuenta a debitar"
         [(ngModel)]="camposDeTransferencia.benefactor" [ngModelOptions]="{standalone: true}" required>
     <br>
@@ -14,9 +14,9 @@
         [ngModelOptions]="{standalone: true}">
     <br>
     <input type="submit" value="Enviar">
-</form> -->
+</form>
 
-<div class="form">
+<!-- <div class="form">
 <form >
     <mat-form-field>
         <mat-label>Cuenta a debitar</mat-label>
@@ -41,8 +41,7 @@
             required>
     </mat-form-field>
     <br>
-    <!-- <input type="submit" value="Enviar"> -->
     <button color="primary" mat-raised-button (click)="hacerTransferencia()">Enviar</button>
 
 </form>
-</div>
+</div> -->

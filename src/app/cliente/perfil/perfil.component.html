@@ -1,10 +1,12 @@
-<app-navbar></app-navbar>
-<ul>
-    <b>Cédula</b>   {{datosPersonales[0].cedula}} <br>
-    <b>Nombre</b>   {{datosPersonales[0].nombre}}<br>
-    <b>Correo</b>   {{datosPersonales[0].correo}}<br>
-    <b>Teléfono</b>   {{datosPersonales[0].telefono}}<br>
-    <b>Dirección</b>   {{datosPersonales[0].direccion}}
-</ul>
+<app-navbar [id]="id"></app-navbar>
+<div *ngIf="datosPersonales">
+    <ul>
+        <b>Cédula</b> {{datosPersonales[0].cedula}} <br>
+        <b>Nombre</b> {{datosPersonales[0].nombre}}<br>
+        <b>Correo</b> {{datosPersonales[0].correo}}<br>
+        <b>Teléfono</b> {{datosPersonales[0].telefono}}<br>
+        <b>Dirección</b> {{datosPersonales[0].direccion}}
+    </ul>
+</div>
 
-<button (click)="volver()">Back</button>
+<!-- <button (click)="volver()">Back</button> -->

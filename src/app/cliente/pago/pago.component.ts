@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnDestroy, OnInit, SimpleChange } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { PagoService } from '../../Services/pago.service';
 @Component({
@@ -9,7 +9,7 @@ import { PagoService } from '../../Services/pago.service';
 export class PagoComponent implements OnInit {
   servicioSeleccionado: any;
   pagos: any[] = [];
-
+  id: any;
   camposDePago = {
     cuenta_a_debitar: '',
     monto: 0,
@@ -25,7 +25,6 @@ export class PagoComponent implements OnInit {
     private pagoService: PagoService,
     private snackbar: MatSnackBar
   ) { }
-
   ngOnInit(): void {
   }
   devolverPagos() {
@@ -46,5 +45,8 @@ export class PagoComponent implements OnInit {
         }
       )
   }
+  getId(){
+    this.id = localStorage.getItem('id');
+  }  
 
 }

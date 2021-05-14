@@ -26,7 +26,8 @@ export class PerfilService {
         catchError(this.handleError<any[]>('devolverCedula', []))
       );
   }
-  devolverPerfilDeClienteId(id: number): Observable<any[]> {
+  devolverPerfilDeClienteId(id: any): Observable<any[]> {
+    id = +id;
     return this.http.get<any[]>(`${this.url}/perfil/${id}`)
       .pipe(
         tap(_ => this.log('Datos personales obtenidos exitosamente')),

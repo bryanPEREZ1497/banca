@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
 export class PerfilComponent implements OnInit {
 
   datosPersonales: any[] = [];
-
+  id: any;
   constructor(
     private perfilService: PerfilService,
     private route: ActivatedRoute,
@@ -21,12 +21,25 @@ export class PerfilComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.devolverPerfilDeCliente();
+    // this.devolverPerfilDeCliente();
+    this.getPerfil();
   }
   devolverPerfilDeCliente() {
-   const id = +!!this.route.snapshot.paramMap.get('id');
-    this.perfilService.devolverPerfilDeClienteId(id)
-      .subscribe(datos => this.datosPersonales = datos)
+    this.id = this.route.snapshot.paramMap.get('id');
+    this.perfilService.devolverPerfilDeClienteId(this.id)
+      .subscribe(datos => {
+        this.datosPersonales = datos
+        console.log('stoy en perfil', this.id);
+
+      })
+  }
+  getPerfil() {
+    this.id = localStorage.getItem('id');
+    this.perfilService.devolverPerfilDeClienteId(this.id)
+      .subscribe(datos => {
+        this.datosPersonales = datos
+        console.log('stoy en perfil', this.id);
+      })
   }
 
   volver() {

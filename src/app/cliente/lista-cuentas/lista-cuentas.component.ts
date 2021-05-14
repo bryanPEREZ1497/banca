@@ -14,14 +14,14 @@ export class ListaCuentasComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router
   ) { }
-
+  id: any;
   ngOnInit(): void {
     this.getCuentas();
   }
 
-  getCuentas() {    
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.clienteService.devolverCuentasDeCliente(id)
+  getCuentas() {
+    this.id = this.route.snapshot.paramMap.get('id');
+    this.clienteService.devolverCuentasDeCliente(this.id)
       .subscribe(datos => this.cuentas = datos)
   }
 
