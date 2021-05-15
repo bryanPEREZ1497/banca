@@ -5,7 +5,12 @@
         <li><a routerLink="/signup" routerLinkActive="activebutton">Registrarse</a></li>
     </ng-container>
     <ng-template #loggedIn>
-        <li><a style="cursor: pointer;" (click)="authService.logout()">Salir</a></li>
+        <li class="logout"><a style="
+            cursor: pointer;
+            color:cadetblue;
+            " 
+            (click)="authService.logout()"
+             >Salir</a></li>
     </ng-template>
 </ul>
 <router-outlet></router-outlet>

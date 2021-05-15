@@ -10,14 +10,15 @@ li{
 }
 li a {
   display: block;
-  color: rgba(255, 255, 255, 0.5);
-  /* color: #ffffff; */
   font-family: Arial, sans-serif;
   font-size: 15px;
   padding: 20px 24px;
   text-decoration: none;
 }
+a{
+  color: rgba(255, 255, 255, 0.5);
+}
 .activebutton {
-    color: #ffffff;
+    color:white;
     font-weight: bold;
 }
