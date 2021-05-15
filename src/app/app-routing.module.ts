@@ -4,12 +4,11 @@ import { CuentaComponent } from "./Components/cuenta/cuenta.component";
 import { PageNotFoundComponent } from "./Components/page-not-found/page-not-found.component";
 import { SignupComponent } from './signup/signup.component';
 import { SigninComponent } from './signin/signin.component';
-import { AuthGuard } from "./auth.guard";
+import { HomeComponent } from './home/home.component';
 const routes: Routes = [
   {
-    path: 'cuentas',
-    component: CuentaComponent,
-    canActivate: [AuthGuard]
+    path: 'home',
+    component: HomeComponent
   },
   {
     path: 'signup',

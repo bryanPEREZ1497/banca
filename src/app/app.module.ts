@@ -12,6 +12,7 @@ import { PageNotFoundComponent } from "./Components/page-not-found/page-not-foun
 import { SignupComponent } from './signup/signup.component';
 import { SigninComponent } from './signin/signin.component';
 import { TokenInterceptorService } from "./Services/token-interceptor.service";
+import { HomeComponent } from './home/home.component';
 import { AuthGuard } from "./auth.guard";
 
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -28,7 +29,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     CuentaComponent,
     PageNotFoundComponent,
     SignupComponent,
-    SigninComponent
+    SigninComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
