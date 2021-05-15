@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -10,7 +10,7 @@ import { ListaCuentasComponent } from './lista-cuentas/lista-cuentas.component';
 import { NavbarComponent } from "./navbar/navbar.component";
 import { PagoComponent } from "./pago/pago.component";
 import { TransferenciaComponent } from "./transferencia/transferencia.component";
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthGuard } from "../auth.guard";
 import { TokenInterceptorService } from "../Services/token-interceptor.service";
 
@@ -48,6 +48,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     // MatTableModule,
     // MatSnackBarModule
   ],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA],
   providers: [
     AuthGuard,
     {

@@ -1,8 +1,15 @@
-<app-navbar></app-navbar>
-<ul>
-    <li *ngFor="let cuenta of cuentas">
-         {{cuenta.nro_cuenta}}- {{cuenta.saldo}}
-    </li>
-</ul>
+<app-navbar [id]="id"></app-navbar>
+<div class="table">
+    <table *ngIf="cuentas">
+        <tr>
+            <th>Nro.Cuenta</th>
+            <th>Saldo</th>
+        </tr>
+        <tr *ngFor="let cuenta of cuentas">
+            <td>{{cuenta.nro_cuenta}}</td>
+            <td>{{cuenta.saldo}}</td>
+        </tr>
+    </table>
+</div>
 
-<button (click)="volver()">Back</button>
+<!-- <button (click)="volver()">Back</button> -->
