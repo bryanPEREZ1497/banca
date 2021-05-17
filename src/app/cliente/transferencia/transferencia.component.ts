@@ -18,6 +18,8 @@ export class TransferenciaComponent implements OnInit {
   constructor(private transferenciaService: TransferenciaService) { }
 
   ngOnInit(): void {
+    this.getId();
+
 
   }
 

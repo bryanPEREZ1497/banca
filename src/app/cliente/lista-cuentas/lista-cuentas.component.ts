@@ -19,8 +19,13 @@ export class ListaCuentasComponent implements OnInit {
     this.getCuentas();
   }
 
+  // getCuentas() {
+  //   this.id = this.route.snapshot.paramMap.get('id');
+  // this.clienteService.devolverCuentasDeCliente(this.id)
+  // .subscribe(datos => this.cuentas = datos)
+  // }
   getCuentas() {
-    this.id = this.route.snapshot.paramMap.get('id');
+    this.id = localStorage.getItem('id');
     this.clienteService.devolverCuentasDeCliente(this.id)
       .subscribe(datos => this.cuentas = datos)
   }

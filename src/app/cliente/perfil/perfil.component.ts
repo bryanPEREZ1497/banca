@@ -24,15 +24,13 @@ export class PerfilComponent implements OnInit {
     // this.devolverPerfilDeCliente();
     this.getPerfil();
   }
-  devolverPerfilDeCliente() {
-    this.id = this.route.snapshot.paramMap.get('id');
-    this.perfilService.devolverPerfilDeClienteId(this.id)
-      .subscribe(datos => {
-        this.datosPersonales = datos
-        console.log('stoy en perfil', this.id);
-
-      })
-  }
+  // devolverPerfilDeCliente() {
+  //   this.id = this.route.snapshot.paramMap.get('id');
+  //   this.perfilService.devolverPerfilDeClienteId(this.id)
+  //     .subscribe(datos => {
+  //       this.datosPersonales = datos
+  //     })
+  // }
   getPerfil() {
     this.id = localStorage.getItem('id');
     this.perfilService.devolverPerfilDeClienteId(this.id)
