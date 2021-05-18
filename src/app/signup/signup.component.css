@@ -1,0 +1,38 @@
+#mycontainer{
+    display: flex;
+    justify-content: center;
+}
+form{
+    display: grid;
+    margin-top: 110px;
+    grid-template-columns: auto;
+    justify-content: center;
+    width: 450px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 15px;
+}
+.in {
+    outline: none;
+    width: 400px;
+    margin: 10px 0;
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+input{
+    transition: 0.3s;
+}
+input:focus{
+    border: 3px solid #ccc;
+}
+
+button{
+    background-color:#3f51b5;
+    color:white;
+    border: none;
+    transition: 0.3s;
+}
+button:hover{
+    background-color:#2f358b;
+}
